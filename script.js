@@ -44,13 +44,16 @@ function generatePassword() {
   enter = parseInt(prompt("How many symbolss would you like your password? Choose between 8 and 128"));
 
   // WHEN prompted for the length of the password, THEN choose a length of at least 8 symbolss and no more than 128 symbolss 
-  // if no value is entered//
+
+  // // if no value is entered//
   if (!enter) {
     alert("Please enter a value");
-
+    return "Could not generate password"
+    
     //if a value does not meet criteria//
-  } else if (enter < 8 || enter > 128) {
+     } else if (enter < 8 || enter > 128 ) {
     enter = parseInt(prompt("You must choose a number between 8 and 128"));
+
 
     //once length of password is validated//
   } else {
@@ -58,7 +61,7 @@ function generatePassword() {
     confirmNumber = confirm("Will this contain numbers?");
 
     // confirm if they want symbolss
-    confirmSymbols = confirm("Will this contain special symbolss?");
+    confirmSymbols = confirm("Will this contain special symbols?");
 
     // confirm if they want uppercase
     confirmUppercase = confirm("Will this contain Uppercase letters?");
@@ -131,10 +134,10 @@ function generatePassword() {
     password.push(pickChoices);
   }
 
-    // This joins the password array and converts it to a string
-    var ps = password.join("");
-    UserInput(ps);
-    return ps;
+  // This joins the password array and converts it to a string
+  var ps = password.join("");
+  UserInput(ps);
+  return ps;
 }
 
 // This puts the password value into the textbox
