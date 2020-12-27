@@ -72,73 +72,75 @@ function generatePassword() {
     choices = alert("You must choose a criteria!");
   }
 
-// First if statement that uses user input prompts to determine choices
-// Else if for 4 positive options
-else if (confirmSymbols && confirmNumber && confirmUppercase && confirmLowercase) {
+  // First if statement that uses user input prompts to determine choices
+  // Else if for 4 positive options
+  else if (confirmSymbols && confirmNumber && confirmUppercase && confirmLowercase) {
 
     choices = symbols.concat(number, lower, upper);
-}
-// Else if for 3 positive options
-else if (confirmSymbols && confirmNumber && confirmUppercase) {
+  }
+  // Else if for 3 positive options
+  else if (confirmSymbols && confirmNumber && confirmUppercase) {
     choices = symbols.concat(number, upper);
-}
-else if (confirmSymbols && confirmNumber && confirmLowercase) {
+  }
+  else if (confirmSymbols && confirmNumber && confirmLowercase) {
     choices = symbols.concat(number, lower);
-}
-else if (confirmSymbols && confirmLowercase && confirmUppercase) {
+  }
+  else if (confirmSymbols && confirmLowercase && confirmUppercase) {
     choices = symbols.concat(lower, upper);
-}
-else if (confirmNumber && confirmLowercase && confirmUppercase) {
+  }
+  else if (confirmNumber && confirmLowercase && confirmUppercase) {
     choices = number.concat(lower, upper);
-}
-// Else if for 2 positive options 
-else if (confirmSymbols && confirmNumber) {
+  }
+  // Else if for 2 positive options 
+  else if (confirmSymbols && confirmNumber) {
     choices = symbols.concat(number);
 
-} else if (confirmSymbols && confirmLowercase) {
+  } else if (confirmSymbols && confirmLowercase) {
     choices = symbols.concat(lower);
 
-} else if (confirmSymbols && confirmUppercase) {
+  } else if (confirmSymbols && confirmUppercase) {
     choices = symbols.concat(upper);
-}
-else if (confirmLowercase && confirmNumber) {
+  }
+  else if (confirmLowercase && confirmNumber) {
     choices = alpha.concat(number);
 
-} else if (confirmLowercase && confirmUppercase) {
+  } else if (confirmLowercase && confirmUppercase) {
     choices = alpha.concat(upper);
 
-} else if (confirmNumber && confirmUppercase) {
+  } else if (confirmNumber && confirmUppercase) {
     choices = number.concat(upper);
-}
-// Else if for 1 positive option
-else if (confirmSymbols) {
+  }
+  // Else if for 1 positive option
+  else if (confirmSymbols) {
     choices = symbols;
-}
-else if (confirmNumber) {
+  }
+  else if (confirmNumber) {
     choices = number;
-}
-else if (confirmLowercase) {
+  }
+  else if (confirmLowercase) {
     choices = lower;
+  }
+
+  // password variable is an array placeholder for user generated amount of length
+  var password = [];
+
+  // Start random selection variables:
+  // Random selection for all variables: 
+  for (var i = 0; i < enter; i++) {
+    var pickChoices = choices[Math.floor(Math.random() * choices.length)];
+    password.push(pickChoices);
+  }
+
+    // This joins the password array and converts it to a string
+    var ps = password.join("");
+    UserInput(ps);
+    return ps;
 }
 
-// password variable is an array placeholder for user generated amount of length
-var password = [];
-
+// This puts the password value into the textbox
+// Changed function input to use textcontent
+function UserInput(ps) {
+  document.getElementById("password").textContent = ps;
 }
-
-
-// WHEN I answer each prompt
-// THEN my input should be validated and at least one symbols type should be selected
-// we need to show an error if they gave us no symbolss to choose from
-
-// WHEN all prompts are answered
-// THEN a password is generated that matches the selected criteria
-// from all the symbolss chosen, choose one randomly and add it to our password X number of times
-// 
 
 // ************************ function ends here *********************************
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword); { }
-
-  // ************************ function ends here ********************************//
