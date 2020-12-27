@@ -19,8 +19,15 @@ function writePassword() {
 }
 
 // ************************ function here *********************************
-// write a function called generatePassword which will have a series of prompts for user input
+var character = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
+var number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+var alphaLowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var alphaUppercase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","W","X","Y","Z"]
 
+// write a function called generatePassword which will have a series of prompts for user input
+function generatePassword(){
+
+}
 // WHEN prompted for password criteria
 // THEN I select which criteria to include in the password
 
