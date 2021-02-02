@@ -103,7 +103,7 @@ function generatePassword() {
     choices = symbols.concat(upper);
 
   } else if (confirmLowercase && confirmNumber) {
-    choices = alpha.concat(number);
+    choices = number.concat(number);
 
   } else if (confirmLowercase && confirmUppercase) {
     choices = alpha.concat(upper);
@@ -125,7 +125,7 @@ function generatePassword() {
   // password variable is an array placeholder for user generated amount of length
   var password = [];
 
-    // Random selection for all variables: 
+  // Random selection for all variables: 
   for (var i = 0; i < enter; i++) {
     var pickChoices = choices[Math.floor(Math.random() * choices.length)];
     password.push(pickChoices);
